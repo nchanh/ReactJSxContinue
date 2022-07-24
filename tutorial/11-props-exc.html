@@ -223,22 +223,19 @@
         }
       ];
 
-    const CourseItem = (props) => (
+    const CourseItem = ({course}) => (
       <div className="post-item">
-        <img src={props.imageUrl} alt={props.title} width="300"/>
-        <h2 className="post-title">{props.title}</h2>
-        <p className="post-desc">{props.description}</p>
-        <p className="post-students-count">{props.studentsCount}</p>
+        <img src={course.image_url} alt={course.title} width="300"/>
+        <h2 className="post-title">{course.title}</h2>
+        <p className="post-desc">{course.description}</p>
+        <p className="post-students-count">{course.students_count}</p>
       </div>
     );
 
     const courseItems = courses.map((course, i) => (
       <CourseItem
         key={i}
-        title={course.title}
-        description={course.description}
-        imageUrl={course.image_url}
-        studentsCount={course.students_count}
+        course={course}
       />
     ));
 
