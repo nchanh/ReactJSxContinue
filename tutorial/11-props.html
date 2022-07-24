@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReactJS | Continue</title>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    function PostItem({
+      image,
+      title,
+      description,
+      publishedAt,
+      callback = () => {}
+    }) {
+      callback(true); 
+
+      return (
+        <div className="post-item">
+          <img src={image} alt={title} width="100"/>
+          <h2 className="post-title">{title}</h2>
+          <p className="post-desc">{description}</p>
+          <p className="post-published">{publishedAt}</p>
+        </div>
+      );
+    }
+
+    const app = (
+      <div className="posts-list">
+        <PostItem
+          title="1 - title"
+          image="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/294676540_1180730015827074_7126786461786529910_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=eRtGUghUhwkAX_F7i7V&tn=FeKXFQn85t-FXwVK&_nc_ht=scontent.fdad3-6.fna&oh=00_AT-cvw1WsQOtePKR46AfS93x53E63_d1sfeDpAxGjgvhDw&oe=62E302BE"
+          description="1 - description"
+          publishedAt="1 - publishedAt"
+          callback={(callback) => {
+            console.log(callback);
+          }}
+        />
+        <PostItem
+          title="2 - title"
+          image="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/294676540_1180730015827074_7126786461786529910_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=eRtGUghUhwkAX_F7i7V&tn=FeKXFQn85t-FXwVK&_nc_ht=scontent.fdad3-6.fna&oh=00_AT-cvw1WsQOtePKR46AfS93x53E63_d1sfeDpAxGjgvhDw&oe=62E302BE"
+          description="2 - description"
+          publishedAt="2 - publishedAt"
+        />
+        <PostItem
+          title="3 - title"
+          image="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/294676540_1180730015827074_7126786461786529910_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=eRtGUghUhwkAX_F7i7V&tn=FeKXFQn85t-FXwVK&_nc_ht=scontent.fdad3-6.fna&oh=00_AT-cvw1WsQOtePKR46AfS93x53E63_d1sfeDpAxGjgvhDw&oe=62E302BE"
+          description="3 - description"
+          publishedAt="3 - publishedAt"
+        />
+      </div>
+    );
+
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(app);
+  </script>
+</body>
+
+</html>
