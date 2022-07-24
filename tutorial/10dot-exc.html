@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReactJS | Continue</title>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    function PostItem() {
+      return (
+        <div className="post-item">
+          <img src="/image.png" alt="title" />
+          <h2 className="post-title">title</h2>
+          <p className="post-desc">desc</p>
+          <p className="post-published">pushlished</p>
+        </div>
+      );
+    }
+
+    // class PostItem extends React.Component {
+    //   render() {
+    //     return (
+    //       <div className="post-item">
+    //         <img src="/image.png" alt="title" />
+    //         <h2 className="post-title">title</h2>
+    //         <p className="post-desc">desc</p>
+    //         <p className="post-published">pushlished</p>
+    //       </div>
+    //     );
+    //   }
+    // }
+
+    const app = (
+      <div className="posts-list">
+        <PostItem/>
+        <PostItem/>
+        <PostItem/>
+        <PostItem/>
+      </div>
+    );
+
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(app);
+  </script>
+</body>
+
+</html>
