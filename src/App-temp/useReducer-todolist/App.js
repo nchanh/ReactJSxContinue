@@ -59,7 +59,7 @@ const reducerJobs = (state, action) => {
 
     case ACTION_DELETE_JOB:
       const newJobs = [...state.jobs]
-      newJobs.slice(action.payload, 1)
+      newJobs.splice(action.payload, 1)
 
       newState = {
         ...state,
