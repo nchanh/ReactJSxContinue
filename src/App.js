@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div style={{ padding: 20 }}>
+      <p>Nguyễn Chánh</p>
     </div>
   );
 }
