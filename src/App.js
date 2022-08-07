@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { publicRoutes } from '~/routes';
@@ -7,7 +7,7 @@ import { DefaultLayout } from '~/components/Layouts';
 function App() {
   return (
     <Router>
-      <div style={{ padding: 20 }}>
+      <div>
         <Routes>
           {publicRoutes.map((route, i) => {
             const Page = route.component;
