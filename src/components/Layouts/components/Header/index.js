@@ -72,11 +72,9 @@ function Header() {
           </Button>
 
           <PopperMenu items={MENU_ITEMS}>
-            <div className={cx('btn-menu')}>
-              <Button noneBorder>
-                <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
-              </Button>
-            </div>
+            <button className={cx('btn-menu')}>
+              <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
+            </button>
           </PopperMenu>
         </div>
       </div>

@@ -18,14 +18,14 @@ function Button({
   disabled = false,
   leftIcon,
   rightIcon,
-  classCustom = '',
+  className = '',
   to,
   href,
   ...passProps
 }) {
   let Component = 'button';
   const classes = cx('wrapper', {
-    [classCustom]: classCustom,
+    [className]: className,
     primary,
     outline,
     round,

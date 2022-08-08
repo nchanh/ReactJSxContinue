@@ -3,8 +3,20 @@
   width: 223px;
 }
 
-// Menu item
-.menu-item {
+// Menu items
+.menu-items {
   padding-bottom: 8px;
-  font-weight: 400;
+}
+
+// Menu item
+.btn-menu-item {
+  width: 100%;
+  margin-left: 0 !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--color-dark-gray) !important;
+  }
 }
