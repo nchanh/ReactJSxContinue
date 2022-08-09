@@ -7,9 +7,9 @@ import {
   faMagnifyingGlass,
   faPlus,
   faEllipsisVertical,
-  faLanguage,
-  faQuestionCircle,
   faKeyboard,
+  faEarthAsia,
+  faCircleQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -21,9 +21,32 @@ import Button from '~/components/Button';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
-  { title: 'English', icon: <FontAwesomeIcon icon={faLanguage} /> },
-  { title: 'Feedback and help', icon: <FontAwesomeIcon icon={faQuestionCircle} /> },
-  { title: 'Keyboard shortcuts', icon: <FontAwesomeIcon icon={faKeyboard} /> },
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          name: 'en',
+          title: 'English',
+        },
+        {
+          name: 'vi',
+          title: 'Tiếng Việt',
+        },
+      ],
+    },
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    title: 'Feedback and help',
+    to: '/feedback',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    title: 'Keyboard shortcuts',
+  },
 ];
 
 function Header() {
@@ -34,6 +57,10 @@ function Header() {
 
     return () => {};
   }, []);
+
+  const handleChangeMenu = (menuItem) => {
+    console.log(menuItem);
+  };
 
   return (
     <header className={cx('wrapper')}>
@@ -71,7 +98,7 @@ function Header() {
             Log in
           </Button>
 
-          <PopperMenu items={MENU_ITEMS}>
+          <PopperMenu items={MENU_ITEMS} onChange={handleChangeMenu}>
             <button className={cx('btn-menu')}>
               <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
             </button>
