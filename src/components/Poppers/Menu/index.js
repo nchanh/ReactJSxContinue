@@ -34,6 +34,10 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
     setHistory((prev) => prev.slice(0, history.length - 1));
   };
 
+  const handleResetMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+
   return (
     <Tippy
       interactive
@@ -47,6 +51,7 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
           </PopperWrapper>
         </div>
       )}
+      onHidden={handleResetMenu}
     >
       {children}
     </Tippy>
