@@ -12,6 +12,10 @@ import {
   faKeyboard,
   faEarthAsia,
   faCircleQuestion,
+  faCoins,
+  faGear,
+  faChartLine,
+  faArrowRightToBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -19,7 +23,7 @@ import images from '~/assets/images';
 import { Wrapper as PopperWrapper, Menu as PopperMenu } from '~/components/Poppers';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
-import { faMessage, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import { faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -66,6 +70,35 @@ function Header() {
   };
 
   const isLogin = true;
+  const MENU_USER = [
+    {
+      icon: <FontAwesomeIcon icon={faUser} />,
+      title: 'View profile',
+      to: '/profile',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCoins} />,
+      title: 'Get coins',
+      to: '/get-coins',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faChartLine} />,
+      title: 'View Analytics',
+      to: '/analytics',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faGear} />,
+      title: 'Setting',
+      to: '/setting',
+    },
+    ...MENU_ITEMS,
+    {
+      icon: <FontAwesomeIcon icon={faArrowRightToBracket} />,
+      title: 'Log out',
+      to: '/logout',
+      separate: true,
+    },
+  ];
 
   return (
     <header className={cx('wrapper')}>
@@ -103,7 +136,7 @@ function Header() {
 
           {isLogin ? (
             <>
-              <Tippy content="Message" placement="bottom">
+              <Tippy content="Messages" placement="bottom">
                 <button className={cx('btn-menu-plane')}>
                   <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
@@ -122,7 +155,7 @@ function Header() {
             </>
           )}
 
-          <PopperMenu items={MENU_ITEMS} onChange={handleChangeMenu}>
+          <PopperMenu items={isLogin ? MENU_USER : MENU_ITEMS} onChange={handleChangeMenu}>
             {isLogin ? (
               <img
                 className={cx('menu-avatar')}
