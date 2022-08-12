@@ -101,13 +101,39 @@
   }
 }
 
-.btn-menu {
-  display: inline;
+// Actions
+.action {
+  display: flex;
+  align-items: center;
 }
 
 .btn-menu {
+  display: inline;
   font-size: 2.4rem;
   margin-left: 24px;
   background-color: transparent;
   cursor: pointer;
+}
+
+.menu-avatar {
+  margin-left: 24px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.btn-menu-plane,
+.btn-menu-message {
+  font-size: 2.3rem;
+  background-color: transparent;
+  color: #141822;
+}
+
+.btn-menu-plane {
+  margin-left: 26px;
+}
+.btn-menu-message {
+  margin-left: 26px;
 }

@@ -11,12 +11,16 @@
 // Menu item
 .btn-menu-item {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 1.4rem !important;
+  font-size: 1.35rem !important;
   width: 100%;
   margin-left: 0 !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  &.separate {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+  }
 
   &:hover {
     background-color: var(--color-dark-gray) !important;
