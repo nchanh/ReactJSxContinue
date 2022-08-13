@@ -7,7 +7,6 @@ import {
   faXmarkCircle,
   faSpinner,
   faMagnifyingGlass,
-  faPlus,
   faEllipsisVertical,
   faKeyboard,
   faEarthAsia,
@@ -24,6 +23,7 @@ import { Wrapper as PopperWrapper, Menu as PopperMenu } from '~/components/Poppe
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import { faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
+import { UploadIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -132,7 +132,7 @@ function Header() {
         </TippyHeadless>
 
         <div className={cx('action')}>
-          <Button leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+          <Button leftIcon={<UploadIcon />}>Upload</Button>
 
           {isLogin ? (
             <>
