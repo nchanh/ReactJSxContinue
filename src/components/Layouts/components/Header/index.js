@@ -24,6 +24,7 @@ import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import { faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
 import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -157,7 +158,7 @@ function Header() {
 
           <PopperMenu items={isLogin ? MENU_USER : MENU_ITEMS} onChange={handleChangeMenu}>
             {isLogin ? (
-              <img
+              <Image
                 className={cx('menu-avatar')}
                 src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-1/288032640_1155481101685299_8138409178133466525_n.jpg?stp=dst-jpg_p320x320&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=4BWhwPvVGbgAX8xeHU5&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9TG72yCSCap7Py5_D3I8_4bAIOhU_JyPaiWiQCkfNF7w&oe=62F8194C"
                 alt="avt"
