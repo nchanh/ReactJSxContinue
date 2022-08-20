@@ -1,0 +1,62 @@
+.wrapper {
+  --search-border-radius: 92px;
+  --search-heigh: 46px;
+  --search-top-spacer: 9px;
+
+  height: var(--layout-header-heigh);
+  width: 100%;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  height: 100%;
+  width: var(--layout-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 20px;
+}
+
+.logo {
+  height: 42px;
+  width: 118px;
+}
+
+// Actions
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.btn-menu {
+  display: inline;
+  font-size: 2.4rem;
+  margin-left: 24px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu-avatar {
+  margin-left: 24px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.btn-menu-plane,
+.btn-menu-message {
+  font-size: 2.3rem;
+  background-color: transparent;
+  color: #141822;
+}
+
+.btn-menu-plane {
+  margin-left: 26px;
+}
+.btn-menu-message {
+  margin-left: 26px;
+}

@@ -1,0 +1,7 @@
+{
+  "Class clsx": {
+    "scope": "javascript, typescript",
+    "prefix": "class",
+    "body": "className={cx('$1')}"
+  }
+}
